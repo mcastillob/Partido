@@ -33,8 +33,22 @@ public  class DirectorTecnicoController {
         dt2.setApellidoPat("Escobar");
         dt2.setApellidoMat("Escobar");
         
+        DirectorTecnico dt3=new DirectorTecnico();
+        dt3.setRut("16015252-4");
+        dt3.setNombre("Javier");
+        dt3.setApellidoPat("Camus");
+        dt3.setApellidoMat("Velasquez");
+        
+        DirectorTecnico dt4=new DirectorTecnico();
+        dt4.setRut("17-K");
+        dt4.setNombre("Cristian");
+        dt4.setApellidoPat("Montecinos");
+        dt4.setApellidoMat("Pedrero");
+        
         objDt.add(dt1);
         objDt.add(dt2);
+        objDt.add(dt3);
+        objDt.add(dt4);
     }
     
     public static void  agregarDT(DirectorTecnico dt){
