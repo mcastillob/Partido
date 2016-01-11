@@ -25,6 +25,10 @@ public class JugadoresController {
     
     
     public static void JugadoresInicial(){
+        
+        
+        //Este es un comentario de ejemplo
+        
         //LOAD Jugadores in Colo-Colo
         Jugador jg1=new Jugador();
         jg1.setNombres("Francisco");
