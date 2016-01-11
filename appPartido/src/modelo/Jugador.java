@@ -91,7 +91,10 @@ public class Jugador {
     // </editor-fold> 
     public Jugador () {
     }
-
+    public String getNombreCompleto(){
+    String nomCompleto=Nombres+" "+ApellidoPaterno+" "+ApellidoMaterno;
+    return nomCompleto;
+    }
     // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
     // #[regen=yes,regenBody=yes,id=DCE.12F9BB0B-A987-9FF9-8751-27421BC2EA11]
     // </editor-fold> 
