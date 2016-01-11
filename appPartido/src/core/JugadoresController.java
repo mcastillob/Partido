@@ -17,30 +17,103 @@ import modelo.*;
  */
 public class JugadoresController {
     
+    public static List<Jugador> objJugador=new ArrayList<>();
+    public static Equipo colocolo=lEquipo.get(0);
+    public static Equipo uchile=lEquipo.get(1);
+    public static Equipo wanderers=lEquipo.get(2);
+    public static Equipo cobreloa=lEquipo.get(3);
+    
+    
+    public static void JugadoresInicial(){
+        //LOAD Jugadores in Colo-Colo
+        Jugador jg1=new Jugador();
+        jg1.setNombres("Francisco");
+        jg1.setApellidoPaterno("Valdes");
+        jg1.setApellidoMaterno("Perez");
+        jg1.setEquipo(colocolo);
+        jg1.setTitular(false);
+        
+        Jugador jg2=new Jugador();
+        jg1.setNombres("Carlos");
+        jg1.setApellidoPaterno("Caszely");
+        jg1.setApellidoMaterno("Garrido");
+        jg1.setEquipo(colocolo);
+        jg1.setTitular(true);
+        
+        objJugador.add(jg1);
+        objJugador.add(jg2);
+                
+        //LOAD Jugadores in U Chile
+        Jugador jg3=new Jugador();
+        jg1.setNombres("Manuel");
+        jg1.setApellidoPaterno("Rodríguez");
+        jg1.setApellidoMaterno("Vega");
+        jg1.setEquipo(uchile);
+        jg1.setTitular(false);
+        
+        Jugador jg4=new Jugador();
+        jg1.setNombres("Marcelo");
+        jg1.setApellidoPaterno("Salas");
+        jg1.setApellidoMaterno("Melinao");
+        jg1.setEquipo(uchile);
+        jg1.setTitular(true);
+        
+        objJugador.add(jg3);
+        objJugador.add(jg4);
+        
+        //LOAD Jugadores in S. Wanderers
+        Jugador jg5=new Jugador();
+        jg1.setNombres("Mauricio");
+        jg1.setApellidoPaterno("Rojas");
+        jg1.setApellidoMaterno("Toro");
+        jg1.setEquipo(wanderers);
+        jg1.setTitular(false);
+        
+        Jugador jg6=new Jugador();
+        jg1.setNombres("Claudio");
+        jg1.setApellidoPaterno("Borghi");
+        jg1.setApellidoMaterno("Bidos");
+        jg1.setEquipo(wanderers);
+        jg1.setTitular(true);
+        
+        objJugador.add(jg5);
+        objJugador.add(jg6);
+        
+        //LOAD Jugadores in Cobreloa
+         Jugador jg7=new Jugador();
+        jg1.setNombres("Eduardo");
+        jg1.setApellidoPaterno("Vargas");
+        jg1.setApellidoMaterno("Rojas");
+        jg1.setEquipo(wanderers);
+        jg1.setTitular(false);
+        
+        Jugador jg8=new Jugador();
+        jg1.setNombres("Alexis");
+        jg1.setApellidoPaterno("Sánchez");
+        jg1.setApellidoMaterno("Sánchez");
+        jg1.setEquipo(wanderers);
+        jg1.setTitular(true);
+        
+        objJugador.add(jg7);
+        objJugador.add(jg8);
+        
+    }
+    
    
-
    public static void agregarArquero(Arquero arquero,int equipoIndex){
-   
-    Equipo equipo=EquipoController.getEquipo(equipoIndex);
-    
-    if(equipo.getArqueros()==null){
-        ArrayList<Arquero> arq=new ArrayList<Arquero>();
-        equipo.setArqueros(arq);
-    }
-    
-     if(equipo.getArqueros().size()>0){
-     List<Arquero> arqueros=  equipo.getArqueros();
-     List<Arquero> Filter= arqueros.stream().filter(x->x.getRut().equals(arquero.getRut())).collect(Collectors.toList());
-     if(Filter.size()>0){   
-     arqueros.remove(Filter.get(0));
-    }
-     
-    }
-   
-  
-   equipo.getArqueros().add(arquero);
-   
-   
+       Equipo equipo=EquipoController.getEquipo(equipoIndex);    
+       if(equipo.getArqueros()==null){
+            ArrayList<Arquero> arq=new ArrayList<Arquero>();
+            equipo.setArqueros(arq);
+       }  
+       if(equipo.getArqueros().size()>0){
+            List<Arquero> arqueros=  equipo.getArqueros();
+            List<Arquero> Filter= arqueros.stream().filter(x->x.getRut().equals(arquero.getRut())).collect(Collectors.toList());
+            if(Filter.size()>0){   
+                arqueros.remove(Filter.get(0));
+            }     
+       }  
+   equipo.getArqueros().add(arquero);   
    }
    
    
@@ -54,15 +127,14 @@ public class JugadoresController {
     }
     
      if(equipo.getDefensas().size()>0){
-     List<Defensa> defensas=  equipo.getDefensas();
-     List<Defensa> Filter= defensas.stream().filter(x->x.getRut().equals(defensa.getRut())).collect(Collectors.toList());
-     if(Filter.size()>0){   
-     defensas.remove(Filter.get(0));
-    }     
+        List<Defensa> defensas=  equipo.getDefensas();
+        List<Defensa> Filter= defensas.stream().filter(x->x.getRut().equals(defensa.getRut())).collect(Collectors.toList());
+        if(Filter.size()>0){   
+            defensas.remove(Filter.get(0));
+        }     
     }
-   equipo.getDefensas().add(defensa);
-  
-   }
+    equipo.getDefensas().add(defensa);
+ }
    
    
       public static void agregarDelantero(Delantero delantero,int equipoIndex){
@@ -73,21 +145,20 @@ public class JugadoresController {
         ArrayList<Delantero> del=new ArrayList<Delantero>();
         equipo.setDelanteros(del);
     }
-    
-     if(equipo.getDelanteros().size()>0){
-     List<Delantero> delanteros=  equipo.getDelanteros();
-     List<Delantero> Filter= delanteros.stream().filter(x->x.getRut().equals(delantero.getRut())).collect(Collectors.toList());
-     if(Filter.size()>0){   
-     delanteros.remove(Filter.get(0));
-    }     
+    if(equipo.getDelanteros().size()>0){
+        List<Delantero> delanteros=  equipo.getDelanteros();
+        List<Delantero> Filter= delanteros.stream().filter(x->x.getRut().equals(delantero.getRut())).collect(Collectors.toList());
+        if(Filter.size()>0){   
+            delanteros.remove(Filter.get(0));
+        }     
     }
-   equipo.getDelanteros().add(delantero);
+    equipo.getDelanteros().add(delantero);
   
    }
    
    
    
-         public static void agregarVolante(Volante volante,int equipoIndex){
+    public static void agregarVolante(Volante volante,int equipoIndex){
    
     Equipo equipo=EquipoController.getEquipo(equipoIndex);
     
@@ -95,19 +166,16 @@ public class JugadoresController {
         ArrayList<Volante> vol=new ArrayList<Volante>();
         equipo.setVolantes(vol);
     }
-    
      if(equipo.getVolantes().size()>0){
-     List<Volante> volantes=  equipo.getVolantes();
-     List<Volante> Filter= volantes.stream().filter(x->x.getRut().equals(volante.getRut())).collect(Collectors.toList());
-     if(Filter.size()>0){   
-     volantes.remove(Filter.get(0));
-    }     
+        List<Volante> volantes=  equipo.getVolantes();
+        List<Volante> Filter= volantes.stream().filter(x->x.getRut().equals(volante.getRut())).collect(Collectors.toList());
+        if(Filter.size()>0){   
+            volantes.remove(Filter.get(0));
+        }     
     }
-   equipo.getVolantes().add(volante);
+    equipo.getVolantes().add(volante);
   
    }
-   
-   
    
    
    
