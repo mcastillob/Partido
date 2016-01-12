@@ -7,6 +7,7 @@ package core;
 
 import java.util.AbstractList;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 import javax.swing.DefaultComboBoxModel;
@@ -383,6 +384,59 @@ public class JugadoresController  implements java.io.Serializable{
             break;
         }    
     }
+    
+    
+ 
+    public  <T> Iterable<T> emptyIfNull(Iterable<T> iterable) {
+    return iterable == null ? Collections.<T>emptyList() : iterable;
+}
+    
+    public void EliminaJugador(String rut){
+          
+        
+        for (Equipo erquipo : emptyIfNull(EquipoController.getInstance().lEquipo)) {    
+            
+            
+            
+            for (Jugador jugador :  emptyIfNull(erquipo.getDefensas())) {
+                
+                if(jugador.getRut().equals(rut)){
+                
+                erquipo.getDefensas().remove(jugador);
+                break;
+                }
+               
+            }
+            for (Jugador jugador :  emptyIfNull(erquipo.getArqueros())) {
+                 if(jugador.getRut().equals(rut)){
+                
+                erquipo.getArqueros().remove(jugador);
+                 break;
+                }
+            }     
+             
+            for (Jugador jugador :  emptyIfNull(erquipo.getDelanteros())) {
+                 if(jugador.getRut().equals(rut)){
+                
+                erquipo.getDelanteros().remove(jugador);
+                 break;
+                }
+            }  
+            
+             for (Jugador jugador :  emptyIfNull(erquipo.getVolantes())) {
+                 if(jugador.getRut().equals(rut)){
+                
+                erquipo.getVolantes().remove(jugador);
+                 break;
+                }
+            } 
+             EquipoController.getInstance().agregaEquipo(erquipo); 
+        }
+     
+    
+    }
+    
+    
     public  ArrayList<Jugador> getJugadores(){        
        return objJugador;
     }

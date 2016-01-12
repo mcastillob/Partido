@@ -35,7 +35,7 @@ public class EquipoController  implements  java.io.Serializable{
    }
     
      
-    private  void grabar(){        
+    public  void grabar(){        
       SerializadorUtil<EquipoController> Seri=new SerializadorUtil<EquipoController>(EquipoController.class);
       Seri.writeObj(this.intance);    
      }
@@ -98,8 +98,12 @@ public class EquipoController  implements  java.io.Serializable{
     
     
       public  Equipo getEquipo(int index){
-                
-       return lEquipo.get(index);
+          
+          if(lEquipo.size()>index){
+          return lEquipo.get(index);
+          }
+          
+       return null;
    }
     
     public  DefaultListModel  getLlistModel(){

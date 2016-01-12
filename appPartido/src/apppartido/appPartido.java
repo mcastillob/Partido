@@ -71,7 +71,6 @@ public class appPartido extends javax.swing.JFrame {
         jCheckBoxTitular = new javax.swing.JCheckBox();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTableJugadores = new javax.swing.JTable();
-        jButton3 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jComboBox3 = new javax.swing.JComboBox<>();
@@ -278,9 +277,7 @@ public class appPartido extends javax.swing.JFrame {
     );
     jScrollPane2.setViewportView(jTableJugadores);
 
-    jButton3.setText("Recargar");
-
-    jButton5.setText("Refresh");
+    jButton5.setText("Quitar");
     jButton5.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
             jButton5ActionPerformed(evt);
@@ -313,12 +310,11 @@ public class appPartido extends javax.swing.JFrame {
                         .addComponent(jTextFieldNombres, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)
                         .addComponent(jComboBoxTipo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jTextFieldrutJugador))
-                    .addGap(18, 18, 18)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jButton3)
-                        .addComponent(jButton1))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton5))
+                    .addGap(24, 24, 24)
+                    .addComponent(jButton1)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jButton5)
+                    .addGap(0, 0, Short.MAX_VALUE))
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 702, Short.MAX_VALUE)))
@@ -327,13 +323,12 @@ public class appPartido extends javax.swing.JFrame {
     jPanel2Layout.setVerticalGroup(
         jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(jPanel2Layout.createSequentialGroup()
-            .addGap(25, 25, 25)
+            .addGap(26, 26, 26)
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel1)
-                        .addComponent(jTextFieldrutJugador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton3))
+                        .addComponent(jTextFieldrutJugador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel2)
@@ -363,7 +358,7 @@ public class appPartido extends javax.swing.JFrame {
                 .addComponent(jButton1)
                 .addComponent(jButton5))
             .addGap(18, 18, 18)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 211, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
             .addContainerGap())
     );
 
@@ -774,9 +769,13 @@ public class appPartido extends javax.swing.JFrame {
       if (!evt.getValueIsAdjusting()) {
         JList list = (JList) evt.getSource();
         Equipo equipo= EquipoController.getInstance().getEquipo(list.getAnchorSelectionIndex());  
+        
+        if(equipo!=null){
          jTextFieldNombreEquipo.setText(equipo.getNombre());
          jComboBoxDirectorTecnico.setSelectedItem(equipo.getDirectorTecnico().getNombre()+" "+equipo.getDirectorTecnico().getApellidoPat()+" "+equipo.getDirectorTecnico().getApellidoMat());
          JugadoresController.getInstance().doTableJugadores(jTableJugadores1,list.getSelectedIndex()); 
+         
+        }
           }
 
        
@@ -810,6 +809,10 @@ public class appPartido extends javax.swing.JFrame {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:}
         
+        
+        String rut= jTableJugadores.getModel().getValueAt(jTableJugadores.getSelectedRow(), 0).toString();
+        JugadoresController.getInstance().EliminaJugador(rut);
+        JugadoresController.getInstance().doTableJugadores(jTableJugadores);   
     }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
@@ -850,7 +853,6 @@ public class appPartido extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
