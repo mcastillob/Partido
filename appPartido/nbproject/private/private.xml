@@ -3,12 +3,26 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Miguel%20Castillo/Documents/Partido/appPartido/src/core/DirectorTecnicoController.java</file>
-            <file>file:/C:/Users/Miguel%20Castillo/Documents/Partido/appPartido/src/core/EquipoController.java</file>
-            <file>file:/C:/Users/Miguel%20Castillo/Documents/Partido/appPartido/src/core/JugadoresController.java</file>
+            <file>file:/C:/Users/Miguel%20Castillo/Documents/Partido/appPartido/src/modelo/Equipo.java</file>
+            <file>file:/C:/Users/Miguel%20Castillo/Documents/Partido/appPartido/src/modelo/Cambio.java</file>
+            <file>file:/C:/Users/Miguel%20Castillo/Documents/Partido/appPartido/src/modelo/Tarjeta.java</file>
+            <file>file:/C:/Users/Miguel%20Castillo/Documents/Partido/appPartido/src/modelo/Arquero.java</file>
+            <file>file:/C:/Users/Miguel%20Castillo/Documents/Partido/appPartido/src/modelo/Volante.java</file>
             <file>file:/C:/Users/Miguel%20Castillo/Documents/Partido/appPartido/src/apppartido/appPartido.java</file>
             <file>file:/C:/Users/Miguel%20Castillo/Documents/Partido/appPartido/src/apppartido/DetalleJugador.java</file>
             <file>file:/C:/Users/Miguel%20Castillo/Documents/Partido/appPartido/src/core/SerializadorUtil.java</file>
+            <file>file:/C:/Users/Miguel%20Castillo/Documents/Partido/appPartido/src/modelo/TablaPosiciones.java</file>
+            <file>file:/C:/Users/Miguel%20Castillo/Documents/Partido/appPartido/src/modelo/DirectorTecnico.java</file>
+            <file>file:/C:/Users/Miguel%20Castillo/Documents/Partido/appPartido/src/modelo/Partido.java</file>
+            <file>file:/C:/Users/Miguel%20Castillo/Documents/Partido/appPartido/src/core/DirectorTecnicoController.java</file>
+            <file>file:/C:/Users/Miguel%20Castillo/Documents/Partido/appPartido/src/core/EquipoController.java</file>
+            <file>file:/C:/Users/Miguel%20Castillo/Documents/Partido/appPartido/src/core/JugadoresController.java</file>
+            <file>file:/C:/Users/Miguel%20Castillo/Documents/Partido/appPartido/src/modelo/CambioJugador.java</file>
+            <file>file:/C:/Users/Miguel%20Castillo/Documents/Partido/appPartido/src/modelo/Jugador.java</file>
+            <file>file:/C:/Users/Miguel%20Castillo/Documents/Partido/appPartido/src/modelo/Campeonato.java</file>
+            <file>file:/C:/Users/Miguel%20Castillo/Documents/Partido/appPartido/src/modelo/Titular.java</file>
+            <file>file:/C:/Users/Miguel%20Castillo/Documents/Partido/appPartido/src/modelo/Delantero.java</file>
+            <file>file:/C:/Users/Miguel%20Castillo/Documents/Partido/appPartido/src/modelo/Defensa.java</file>
         </group>
     </open-files>
 </project-private>
