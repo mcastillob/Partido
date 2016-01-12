@@ -6,7 +6,7 @@ package modelo;
 public class Arquero extends Jugador  implements java.io.Serializable{
 
    
-
+    static final long serialVersionUID = 42L;
     // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
     // #[regen=yes,id=DCE.D7DAB407-2D5D-BEC4-804C-7FEF97A210C5]
     // </editor-fold> 

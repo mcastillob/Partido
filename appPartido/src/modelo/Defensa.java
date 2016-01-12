@@ -4,7 +4,7 @@ package modelo;
 // #[regen=yes,id=DCE.ECAD3C3A-E0BF-74EB-C705-701539CE6A8C]
 // </editor-fold> 
 public class Defensa extends Jugador  implements java.io.Serializable{
-
+static final long serialVersionUID = 42L;
     // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
     // #[regen=yes,id=DCE.4B082C6E-496A-F300-5A75-EB3CFEB9A6F3]
     // </editor-fold> 

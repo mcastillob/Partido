@@ -4,7 +4,7 @@ package modelo;
 // #[regen=yes,id=DCE.F5B64772-E997-05AE-7F63-CC0B6FBAD96F]
 // </editor-fold> 
 public class Delantero extends Jugador  implements java.io.Serializable{
-
+static final long serialVersionUID = 42L;
     // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
     // #[regen=yes,id=DCE.D98F0150-CF22-68DC-53D4-1A3E37ABB3A4]
     // </editor-fold> 

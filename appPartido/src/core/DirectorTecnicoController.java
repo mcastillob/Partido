@@ -17,6 +17,7 @@ import modelo.*;
  */
 public  class DirectorTecnicoController  implements  java.io.Serializable{
     //se define un singleton
+    static final long serialVersionUID = 42L;
     private static DirectorTecnicoController intance; 
     
     public static DirectorTecnicoController getInstance(){

@@ -4,7 +4,7 @@ package modelo;
 // #[regen=yes,id=DCE.554CDDB7-129A-58BA-FCE2-DD0E8272D222]
 // </editor-fold> 
 public class Cambio  implements java.io.Serializable{
-
+static final long serialVersionUID = 42L;
     // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
     // #[regen=yes,id=DCE.ED12E726-D44C-1FFC-5FE7-F616524B1A16]
     // </editor-fold> 

@@ -18,8 +18,8 @@ import modelo.Equipo;
  * @author Miguel Castillo
  */
 public class EquipoController  implements  java.io.Serializable{
-    
-   public    List<Equipo> lEquipo=new ArrayList<Equipo>();
+    static final long serialVersionUID = 42L;
+    public    List<Equipo> lEquipo=new ArrayList<Equipo>();
     private static EquipoController intance; 
     
     public static EquipoController getInstance(){

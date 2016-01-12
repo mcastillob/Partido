@@ -11,6 +11,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.DefaultListModel;
 import javax.swing.table.DefaultTableModel;
 import modelo.*;
 /**
@@ -18,7 +19,7 @@ import modelo.*;
  * @author Miguel Castillo
  */
 public class JugadoresController  implements java.io.Serializable{
-    
+    static final long serialVersionUID = 42L;
     public  ArrayList<Jugador> objJugador=new ArrayList<>();
     
     private static JugadoresController intance; 
@@ -436,6 +437,51 @@ public class JugadoresController  implements java.io.Serializable{
     
     }
     
+        public  DefaultListModel  getListTitularesModel(int equipoIndex){
+          
+                DefaultListModel model = new DefaultListModel();
+        
+            
+                Equipo equipo=EquipoController.getInstance().getEquipo(equipoIndex);
+                if(equipo!=null && equipo.getArqueros()!=null){
+                  for(Arquero arquero:equipo.getArqueros())   {
+                      if( arquero.getTitular()){
+                       model.addElement("("+arquero.getNumero()+")"+arquero.getNombres()+" "+arquero.getApellidoPaterno()+" "+arquero.getApellidoMaterno());                                   
+                      }
+                     
+                       
+                  }
+                }               
+                
+                if(equipo!=null && equipo.getDefensas()!=null){
+                  for(Defensa defensa:equipo.getDefensas())   {
+                       if( defensa.getTitular()){
+                   model.addElement("("+defensa.getNumero()+")"+defensa.getNombres()+" "+defensa.getApellidoPaterno()+" "+defensa.getApellidoMaterno());                                   
+                       }
+                  }
+                }
+                
+                if(equipo!=null && equipo.getDelanteros()!=null){
+                    for(Delantero delantero:equipo.getDelanteros())   {
+                         if( delantero.getTitular()){
+                 model.addElement("("+delantero.getNumero()+")"+delantero.getNombres()+" "+delantero.getApellidoPaterno()+" "+delantero.getApellidoMaterno());                     
+                         }
+                  }
+                }                
+                
+                if(equipo!=null &&  equipo.getVolantes()!=null){
+                   for(Volante volante:equipo.getVolantes())   {
+                        if( volante.getTitular()){
+                   model.addElement("("+volante.getNumero()+")"+volante.getNombres()+" "+volante.getApellidoPaterno()+" "+volante.getApellidoMaterno());
+                        }
+                      
+                  }
+                }
+            
+            
+                         
+         return model;
+    }
     
     public  ArrayList<Jugador> getJugadores(){        
        return objJugador;

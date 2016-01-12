@@ -5,7 +5,7 @@ import java.util.ArrayList;
 // #[regen=yes,id=DCE.CCFAF257-86CE-F99E-286F-7D613AF0304E]
 // </editor-fold> 
 public class Equipo  implements java.io.Serializable{
-
+static final long serialVersionUID = 42L;
     // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
     // #[regen=yes,id=DCE.F4C0228D-2463-FFD8-35AA-080D3C6EB018]
     // </editor-fold> 

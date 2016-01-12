@@ -5,7 +5,7 @@ import java.util.ArrayList;
 // #[regen=yes,id=DCE.3793631C-D346-6C18-9478-2B033D51DEAA]
 // </editor-fold> 
 public class Jugador  implements java.io.Serializable{
-
+static final long serialVersionUID = 42L;
     // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
     // #[regen=yes,id=DCE.088C524C-5A1F-8CAA-D6B9-9FD9A64C3B90]
     // </editor-fold> 

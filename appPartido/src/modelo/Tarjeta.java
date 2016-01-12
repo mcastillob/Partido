@@ -4,7 +4,7 @@ package modelo;
 // #[regen=yes,id=DCE.BE0F82ED-85F2-DAF9-5E53-35AB9B6689E5]
 // </editor-fold> 
 public class Tarjeta  implements java.io.Serializable{
-
+static final long serialVersionUID = 42L;
     // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
     // #[regen=yes,id=DCE.7DED5B2E-ABB4-39E9-BBB0-9F464000654C]
     // </editor-fold> 
