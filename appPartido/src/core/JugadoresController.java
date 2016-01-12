@@ -21,8 +21,8 @@ public class JugadoresController {
     public static ArrayList<Jugador> objJugador=new ArrayList<>();
     public static Equipo colocolo=lEquipo.get(0);
     public static Equipo uchile=lEquipo.get(1);
-    //public static Equipo wanderers=lEquipo.get(2);
-    //public static Equipo cobreloa=lEquipo.get(3);
+    public static Equipo wanderers=lEquipo.get(2);
+    public static Equipo cobreloa=lEquipo.get(3);
     
     public static void JugadoresInicial(){       
                 
@@ -66,7 +66,7 @@ public class JugadoresController {
         objJugador.add(jg3);
         objJugador.add(jg4);
         
-        /*
+        
         
         //LOAD Jugadores in S. Wanderers
         Jugador jg5=new Jugador();
@@ -108,7 +108,7 @@ public class JugadoresController {
         objJugador.add(jg7);
         objJugador.add(jg8);
         
-        */
+        
         
          
         

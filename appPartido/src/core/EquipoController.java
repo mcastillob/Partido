@@ -31,20 +31,20 @@ public class EquipoController {
        equipo2.setNombre("Universidad de chile");
        equipo2.setDirectorTecnico(DirectorTecnicoController.getDirectorTecnico(1));
        
-       /*
+       
        Equipo equipo3=new Equipo();
-       equipo1.setNombre("Santiago Wanderers");
-       equipo1.setDirectorTecnico(DirectorTecnicoController.getDirectorTecnico(2));
+       equipo3.setNombre("Santiago Wanderers");
+       equipo3.setDirectorTecnico(DirectorTecnicoController.getDirectorTecnico(2));
        
        Equipo equipo4=new Equipo();
-       equipo2.setNombre("Cobreloa");
-       equipo2.setDirectorTecnico(DirectorTecnicoController.getDirectorTecnico(3));
-       */
+       equipo4.setNombre("Cobreloa");
+       equipo4.setDirectorTecnico(DirectorTecnicoController.getDirectorTecnico(3));
+       
        
         lEquipo.add(equipo1);
         lEquipo.add(equipo2);
-        //lEquipo.add(equipo3);
-        //lEquipo.add(equipo4);
+        lEquipo.add(equipo3);
+        lEquipo.add(equipo4);
    }
    
    public static void agregaEquipo(Equipo equipo){
