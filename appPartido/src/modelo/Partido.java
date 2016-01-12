@@ -5,7 +5,7 @@ import java.util.Date;
 // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
 // #[regen=yes,id=DCE.2674BF2F-E21A-D8E2-75E7-1E117C081FB5]
 // </editor-fold> 
-public class Partido {
+public class Partido  implements java.io.Serializable{
 
     // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
     // #[regen=yes,id=DCE.63AD124E-3DF5-C4C2-831A-47E7AAA7F4C1]

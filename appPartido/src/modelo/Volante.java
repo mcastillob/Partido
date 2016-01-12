@@ -3,7 +3,7 @@ package modelo;
 // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
 // #[regen=yes,id=DCE.3E2CDAC7-EAA0-731E-D3D0-68FD83531BB2]
 // </editor-fold> 
-public class Volante extends Jugador {
+public class Volante extends Jugador  implements java.io.Serializable{
 
     // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
     // #[regen=yes,id=DCE.89DE8328-942B-4F22-9FE8-1E09ED1DB55E]

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
 // #[regen=yes,id=DCE.1075DB58-FCB7-F562-D605-7966881850A6]
 // </editor-fold> 
-public class Campeonato {
+public class Campeonato   implements java.io.Serializable{
 
     // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
     // #[regen=yes,id=DCE.E8EA2335-07F8-486E-0C6F-D2892E77F37F]

@@ -3,7 +3,7 @@ package modelo;
 // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
 // #[regen=yes,id=DCE.554CDDB7-129A-58BA-FCE2-DD0E8272D222]
 // </editor-fold> 
-public class Cambio {
+public class Cambio  implements java.io.Serializable{
 
     // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
     // #[regen=yes,id=DCE.ED12E726-D44C-1FFC-5FE7-F616524B1A16]

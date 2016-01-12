@@ -3,7 +3,7 @@ package modelo;
 // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
 // #[regen=yes,id=DCE.C13E9460-9A40-9921-2D0A-AAC9584A4F9E]
 // </editor-fold> 
-public class Arquero extends Jugador {
+public class Arquero extends Jugador  implements java.io.Serializable{
 
    
 

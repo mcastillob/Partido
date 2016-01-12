@@ -7,7 +7,7 @@ package apppartido;
 import core.DirectorTecnicoController;
 import core.EquipoController;
 import core.JugadoresController;
-import static core.JugadoresController.agregarArquero;
+
 import core.RutUtil;
 import core.mensajeUtil;
 import javax.swing.ComboBoxModel;
@@ -622,8 +622,8 @@ public class appPartido extends javax.swing.JFrame {
           arquero.setApellidoMaterno(jTextFieldApellidoMat.getText());
           arquero.setNumero(Integer.parseInt(jTextFieldrutNumero.getText()));    
           arquero.setTitular(jCheckBoxTitular.isSelected());
-          JugadoresController.agregarArquero(arquero, jComboBoxEquipo.getSelectedIndex());
-          JugadoresController.doTableJugadores(jTableJugadores);
+          JugadoresController.getInstance().agregarArquero(arquero, jComboBoxEquipo.getSelectedIndex());
+          JugadoresController.getInstance().doTableJugadores(jTableJugadores);
     
         break;
         
@@ -636,8 +636,8 @@ public class appPartido extends javax.swing.JFrame {
           defensa.setApellidoMaterno(jTextFieldApellidoMat.getText());
           defensa.setNumero(Integer.parseInt(jTextFieldrutNumero.getText()));    
           defensa.setTitular(jCheckBoxTitular.isSelected());
-          JugadoresController.agregarDefensa(defensa, jComboBoxEquipo.getSelectedIndex());
-          JugadoresController.doTableJugadores(jTableJugadores);   
+          JugadoresController.getInstance().agregarDefensa(defensa, jComboBoxEquipo.getSelectedIndex());
+          JugadoresController.getInstance().doTableJugadores(jTableJugadores);   
             
         break;
         
@@ -649,8 +649,8 @@ public class appPartido extends javax.swing.JFrame {
           volante.setApellidoMaterno(jTextFieldApellidoMat.getText());
           volante.setNumero(Integer.parseInt(jTextFieldrutNumero.getText()));    
           volante.setTitular(jCheckBoxTitular.isSelected());
-          JugadoresController.agregarVolante(volante, jComboBoxEquipo.getSelectedIndex());
-          JugadoresController.doTableJugadores(jTableJugadores);     
+          JugadoresController.getInstance().agregarVolante(volante, jComboBoxEquipo.getSelectedIndex());
+          JugadoresController.getInstance().doTableJugadores(jTableJugadores);     
             
         break;
     
@@ -663,8 +663,8 @@ public class appPartido extends javax.swing.JFrame {
           delantero.setApellidoMaterno(jTextFieldApellidoMat.getText());
           delantero.setNumero(Integer.parseInt(jTextFieldrutNumero.getText()));    
           delantero.setTitular(jCheckBoxTitular.isSelected());
-          JugadoresController.agregarDelantero(delantero, jComboBoxEquipo.getSelectedIndex());
-          JugadoresController.doTableJugadores(jTableJugadores);   
+          JugadoresController.getInstance().agregarDelantero(delantero, jComboBoxEquipo.getSelectedIndex());
+          JugadoresController.getInstance().doTableJugadores(jTableJugadores);   
              
         break;
     }
@@ -707,9 +707,9 @@ public class appPartido extends javax.swing.JFrame {
         // TODO add your handling code here:        
         Equipo objEquipo=new Equipo();
         objEquipo.setNombre(jTextFieldNombreEquipo.getText());
-        objEquipo.setDirectorTecnico(DirectorTecnicoController.getDirectorTecnico(jComboBoxDirectorTecnico.getSelectedIndex()));
-        EquipoController.agregaEquipo(objEquipo);
-        jListEquipos.setModel(EquipoController.getLlistModel());
+        objEquipo.setDirectorTecnico(DirectorTecnicoController.getInstance().getDirectorTecnico(jComboBoxDirectorTecnico.getSelectedIndex()));
+        EquipoController.getInstance().agregaEquipo(objEquipo);
+        jListEquipos.setModel(EquipoController.getInstance().getLlistModel());
           mensajeUtil.setMsg("Equipo Agregado Correctamente");
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -721,10 +721,10 @@ public class appPartido extends javax.swing.JFrame {
      objDT.setNombre(jTextFieldNombreDt.getText());
      objDT.setApellidoPat(jTextFieldApellidoDt.getText());
      objDT.setApellidoMat(jTextFieldApellidoMatDt.getText());
-     DirectorTecnicoController.agregarDT(objDT);
-     jListDt.setModel(DirectorTecnicoController.getLlistModel());
-     jComboBoxDirectorTecnico.setModel(DirectorTecnicoController.getComboBoxModel());
-     jComboBoxEquipo.setModel(EquipoController.getComboBoxModel());
+     DirectorTecnicoController.getInstance().agregarDT(objDT);
+     jListDt.setModel(DirectorTecnicoController.getInstance().getLlistModel());
+     jComboBoxDirectorTecnico.setModel(DirectorTecnicoController.getInstance().getComboBoxModel());
+     jComboBoxEquipo.setModel(EquipoController.getInstance().getComboBoxModel());
      mensajeUtil.setMsg("DT Agregado Correctamente");
     }else{
         mensajeUtil.setWarningMsg("El Rut Ingresado es invalido.");
@@ -737,14 +737,11 @@ public class appPartido extends javax.swing.JFrame {
 
    public void cargaInicial(){
     
-    DirectorTecnicoController.dtInicial();
-    EquipoController.equipoInicial();
-    JugadoresController.JugadoresInicial();
-    jListDt.setModel(DirectorTecnicoController.getLlistModel());
-    jComboBoxDirectorTecnico.setModel(DirectorTecnicoController.getComboBoxModel());
-    jListEquipos.setModel(EquipoController.getLlistModel());
-    jComboBoxEquipo.setModel(EquipoController.getComboBoxModel());
-    JugadoresController.doTableJugadores(jTableJugadores);
+    jListDt.setModel(DirectorTecnicoController.getInstance().getLlistModel());
+    jComboBoxDirectorTecnico.setModel(DirectorTecnicoController.getInstance().getComboBoxModel());
+    jListEquipos.setModel(EquipoController.getInstance().getLlistModel());
+    jComboBoxEquipo.setModel(EquipoController.getInstance().getComboBoxModel());
+    JugadoresController.getInstance().doTableJugadores(jTableJugadores);
    }
     
     private void jListDtFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jListDtFocusGained
@@ -756,7 +753,7 @@ public class appPartido extends javax.swing.JFrame {
     private void jListDtValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jListDtValueChanged
       if (!evt.getValueIsAdjusting()) {
         JList list = (JList) evt.getSource();
-        DirectorTecnico dt= DirectorTecnicoController.getDirectorTecnico(list.getAnchorSelectionIndex());  
+        DirectorTecnico dt= DirectorTecnicoController.getInstance().getDirectorTecnico(list.getAnchorSelectionIndex());  
              
          jTextFieldRutDt.setText(dt.getRut());
          jTextFieldNombreDt.setText(dt.getNombre());
@@ -776,10 +773,10 @@ public class appPartido extends javax.swing.JFrame {
 
       if (!evt.getValueIsAdjusting()) {
         JList list = (JList) evt.getSource();
-        Equipo equipo= EquipoController.getEquipo(list.getAnchorSelectionIndex());  
+        Equipo equipo= EquipoController.getInstance().getEquipo(list.getAnchorSelectionIndex());  
          jTextFieldNombreEquipo.setText(equipo.getNombre());
          jComboBoxDirectorTecnico.setSelectedItem(equipo.getDirectorTecnico().getNombre()+" "+equipo.getDirectorTecnico().getApellidoPat()+" "+equipo.getDirectorTecnico().getApellidoMat());
-         JugadoresController.doTableJugadores(jTableJugadores1,list.getSelectedIndex()); 
+         JugadoresController.getInstance().doTableJugadores(jTableJugadores1,list.getSelectedIndex()); 
           }
 
        
@@ -788,8 +785,8 @@ public class appPartido extends javax.swing.JFrame {
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         
        
-        EquipoController.eliminaEquipo(jTextFieldNombreEquipo.getText());
-        jListEquipos.setModel(EquipoController.getLlistModel());
+        EquipoController.getInstance().eliminaEquipo(jTextFieldNombreEquipo.getText());
+        jListEquipos.setModel(EquipoController.getInstance().getLlistModel());
         jTextFieldNombreEquipo.setText("");
 // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed

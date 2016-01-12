@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package core;
-import static core.EquipoController.lEquipo;
+
 import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,106 +16,137 @@ import modelo.*;
  *
  * @author Miguel Castillo
  */
-public class JugadoresController {
+public class JugadoresController  implements java.io.Serializable{
     
-    public static ArrayList<Jugador> objJugador=new ArrayList<>();
-    public static Equipo colocolo=lEquipo.get(0);
-    public static Equipo uchile=lEquipo.get(1);
-    public static Equipo wanderers=lEquipo.get(2);
-    public static Equipo cobreloa=lEquipo.get(3);
+    public  ArrayList<Jugador> objJugador=new ArrayList<>();
     
-    public static void JugadoresInicial(){       
-                
-        //LOAD Jugadores in Colo-Colo
-        Jugador jg1=new Jugador();
-        jg1.setNombres("Francisco");
-        jg1.setApellidoPaterno("Valdes");
-        jg1.setApellidoMaterno("Perez");
-        jg1.setNumero(10);
-        jg1.setEquipo(colocolo);
-        jg1.setTitular(false);
+    private static JugadoresController intance; 
+    
+    public static JugadoresController getInstance(){
+      //deserializa los datos y loscarga en el singleton
+     SerializadorUtil<JugadoresController> Seri=new SerializadorUtil<JugadoresController>(JugadoresController.class);
+     intance=Seri.readObj();
+     
+     if(intance==null){
+     intance=new JugadoresController(); 
+     }
+     
+      return intance;   
+   }
         
-        Jugador jg2=new Jugador();
-        jg2.setNombres("Carlos");
-        jg2.setApellidoPaterno("Caszely");
-        jg2.setApellidoMaterno("Garrido");
-        jg2.setNumero(35);
-        jg2.setEquipo(colocolo);
-        jg2.setTitular(true);
-        
-        objJugador.add(jg1);
-        objJugador.add(jg2);
-                
-        //LOAD Jugadores in U Chile
-        Jugador jg3=new Jugador();
-        jg3.setNombres("Manuel");
-        jg3.setApellidoPaterno("Rodríguez");
-        jg3.setApellidoMaterno("Vega");
-        jg2.setNumero(1);
-        jg3.setEquipo(uchile);
-        jg3.setTitular(false);
-        
-        Jugador jg4=new Jugador();
-        jg4.setNombres("Marcelo");
-        jg4.setApellidoPaterno("Salas");
-        jg4.setApellidoMaterno("Melinao");
-        jg2.setNumero(9);
-        jg4.setEquipo(uchile);
-        jg4.setTitular(true);
-        
-        objJugador.add(jg3);
-        objJugador.add(jg4);
-        
-        
-        
-        //LOAD Jugadores in S. Wanderers
-        Jugador jg5=new Jugador();
-        jg5.setNombres("Mauricio");
-        jg5.setApellidoPaterno("Rojas");
-        jg5.setApellidoMaterno("Toro");
-        jg2.setNumero(20);
-        jg5.setEquipo(wanderers);
-        jg5.setTitular(false);
-        
-        Jugador jg6=new Jugador();
-        jg6.setNombres("Claudio");
-        jg6.setApellidoPaterno("Borghi");
-        jg6.setApellidoMaterno("Bidos");
-        jg2.setNumero(15);
-        jg6.setEquipo(wanderers);
-        jg6.setTitular(true);
-        
-        objJugador.add(jg5);
-        objJugador.add(jg6);
-        
-        //LOAD Jugadores in Cobreloa
-         Jugador jg7=new Jugador();
-        jg7.setNombres("Eduardo");
-        jg7.setApellidoPaterno("Vargas");
-        jg7.setApellidoMaterno("Rojas");
-        jg7.setNumero(4);
-        jg7.setEquipo(wanderers);
-        jg7.setTitular(false);
-        
-        Jugador jg8=new Jugador();
-        jg8.setNombres("Alexis");
-        jg8.setApellidoPaterno("Sánchez");
-        jg8.setApellidoMaterno("Sánchez");
-        jg8.setNumero(7);
-        jg8.setEquipo(wanderers);
-        jg8.setTitular(true);
-                
-        objJugador.add(jg7);
-        objJugador.add(jg8);
-        
-        
-        
-         
-        
-    } 
+    public void grabar(){        
+      SerializadorUtil<JugadoresController> Seri=new SerializadorUtil<JugadoresController>(JugadoresController.class);
+      Seri.writeObj(this.intance);    
+     }
+    
+    
+    
+    
+//    public static Equipo colocolo=lEquipo.get(0);
+//    public static Equipo uchile=lEquipo.get(1);
+//    public static Equipo wanderers=lEquipo.get(2);
+//    public static Equipo cobreloa=lEquipo.get(3);
+    
+//    public static void JugadoresInicial(){       
+//                
+//        //LOAD Jugadores in Colo-Colo
+//        Jugador jg1=new Jugador();
+//        jg1.setRut("8995413-4");
+//        jg1.setNombres("Francisco");
+//        jg1.setApellidoPaterno("Valdes");
+//        jg1.setApellidoMaterno("Perez");
+//        jg1.setNumero(10);
+//        jg1.setEquipo(colocolo);
+//        jg1.setTitular(false);
+//        
+//        Jugador jg2=new Jugador();
+//        jg2.setRut("21896929-1");
+//        jg2.setNombres("Carlos");
+//        jg2.setApellidoPaterno("Caszely");
+//        jg2.setApellidoMaterno("Garrido");
+//        jg2.setNumero(35);
+//        jg2.setEquipo(colocolo);
+//        jg2.setTitular(true);
+//        
+//        objJugador.add(jg1);
+//        objJugador.add(jg2);
+//                
+//        //LOAD Jugadores in U Chile
+//        Jugador jg3=new Jugador();
+//        jg3.setRut("22599054-9");
+//        jg3.setNombres("Manuel");
+//        jg3.setApellidoPaterno("Rodríguez");
+//        jg3.setApellidoMaterno("Vega");
+//        jg3.setNumero(1);
+//        jg3.setEquipo(uchile);
+//        jg3.setTitular(false);
+//        
+//        Jugador jg4=new Jugador();
+//        jg4.setRut("15516797-1");
+//        jg4.setNombres("Marcelo");
+//        jg4.setApellidoPaterno("Salas");
+//        jg4.setApellidoMaterno("Melinao");
+//        jg2.setNumero(9);
+//        jg4.setEquipo(uchile);
+//        jg4.setTitular(true);
+//        
+//        objJugador.add(jg3);
+//        objJugador.add(jg4);
+//        
+//        
+//        
+//        //LOAD Jugadores in S. Wanderers
+//        Jugador jg5=new Jugador();
+//        jg5.setRut("5268495-1");
+//        jg5.setNombres("Mauricio");
+//        jg5.setApellidoPaterno("Rojas");
+//        jg5.setApellidoMaterno("Toro");
+//        jg5.setNumero(20);
+//        jg5.setEquipo(wanderers);
+//        jg5.setTitular(false);
+//        
+//        Jugador jg6=new Jugador();
+//        jg6.setRut("24432325-1");
+//        jg6.setNombres("Claudio");
+//        jg6.setApellidoPaterno("Borghi");
+//        jg6.setApellidoMaterno("Bidos");
+//        jg6.setNumero(15);
+//        jg6.setEquipo(wanderers);
+//        jg6.setTitular(true);
+//        
+//        objJugador.add(jg5);
+//        objJugador.add(jg6);
+//        
+//        //LOAD Jugadores in Cobreloa
+//         Jugador jg7=new Jugador();
+//        jg7.setRut("8801551-7");
+//        jg7.setNombres("Eduardo");
+//        jg7.setApellidoPaterno("Vargas");
+//        jg7.setApellidoMaterno("Rojas");
+//        jg7.setNumero(4);
+//        jg7.setEquipo(wanderers);
+//        jg7.setTitular(false);
+//        
+//        Jugador jg8=new Jugador();
+//        jg8.setRut("8801551-7");
+//        jg8.setNombres("Alexis");
+//        jg8.setApellidoPaterno("Sánchez");
+//        jg8.setApellidoMaterno("Sánchez");
+//        jg8.setNumero(7);
+//        jg8.setEquipo(wanderers);
+//        jg8.setTitular(true);
+//                
+//        objJugador.add(jg7);
+//        objJugador.add(jg8);
+//        
+//        
+//        
+//         
+//        
+//    } 
    
-   public static void agregarArquero(Arquero arquero,int equipoIndex){
-       Equipo equipo=EquipoController.getEquipo(equipoIndex);    
+   public  void agregarArquero(Arquero arquero,int equipoIndex){
+       Equipo equipo=EquipoController.getInstance().getEquipo(equipoIndex);    
        if(equipo.getArqueros()==null){
             ArrayList<Arquero> arq=new ArrayList<Arquero>();
             equipo.setArqueros(arq);
@@ -127,12 +158,14 @@ public class JugadoresController {
                 arqueros.remove(Filter.get(0));
             }     
        }  
-   equipo.getArqueros().add(arquero);   
+   equipo.getArqueros().add(arquero);
+   EquipoController.getInstance().agregaEquipo(equipo);   
+   grabar();
    }   
    
-   public static void agregarDefensa(Defensa defensa,int equipoIndex){
+   public  void agregarDefensa(Defensa defensa,int equipoIndex){
    
-    Equipo equipo=EquipoController.getEquipo(equipoIndex);
+    Equipo equipo=EquipoController.getInstance().getEquipo(equipoIndex);
     
     if(equipo.getDefensas()==null){
         ArrayList<Defensa> def=new ArrayList<Defensa>();
@@ -147,12 +180,14 @@ public class JugadoresController {
         }     
     }
     equipo.getDefensas().add(defensa);
+    EquipoController.getInstance().agregaEquipo(equipo);  
+    grabar();
  }
    
    
-      public static void agregarDelantero(Delantero delantero,int equipoIndex){
+      public  void agregarDelantero(Delantero delantero,int equipoIndex){
    
-    Equipo equipo=EquipoController.getEquipo(equipoIndex);
+    Equipo equipo=EquipoController.getInstance().getEquipo(equipoIndex);
     
     if(equipo.getDelanteros()==null){
         ArrayList<Delantero> del=new ArrayList<Delantero>();
@@ -166,13 +201,14 @@ public class JugadoresController {
         }     
     }
     equipo.getDelanteros().add(delantero);
-  
+    EquipoController.getInstance().agregaEquipo(equipo);  
+    grabar();
    }   
    
    
-    public static void agregarVolante(Volante volante,int equipoIndex){
+    public  void agregarVolante(Volante volante,int equipoIndex){
    
-    Equipo equipo=EquipoController.getEquipo(equipoIndex);
+    Equipo equipo=EquipoController.getInstance().getEquipo(equipoIndex);
     
     if(equipo.getVolantes()==null){
         ArrayList<Volante> vol=new ArrayList<Volante>();
@@ -186,7 +222,8 @@ public class JugadoresController {
         }     
     }
     equipo.getVolantes().add(volante);
-  
+    EquipoController.getInstance().agregaEquipo(equipo);  
+    grabar();
    }  
    
      public static void removeRowsTable(DefaultTableModel model) {
@@ -195,12 +232,12 @@ public class JugadoresController {
         }
     }
    
-   public static void doTableJugadores(javax.swing.JTable jTableClientes) {
+   public  void doTableJugadores(javax.swing.JTable jTableClientes) {
         String registros[]       = new String[6];
         DefaultTableModel modelo = (DefaultTableModel) jTableClientes.getModel();
         removeRowsTable(modelo);
                                              
-            for(Equipo equipo:EquipoController.lEquipo)   {
+            for(Equipo equipo:EquipoController.getInstance().lEquipo)   {
             
                 
                 if(equipo.getArqueros()!=null){
@@ -262,14 +299,14 @@ public class JugadoresController {
         jTableClientes.setModel(modelo);
     }
    
- public static void doTableJugadores(javax.swing.JTable jTableClientes,int equipoIndex) {
+ public  void doTableJugadores(javax.swing.JTable jTableClientes,int equipoIndex) {
         String registros[]       = new String[6];
         DefaultTableModel modelo = (DefaultTableModel) jTableClientes.getModel();
         removeRowsTable(modelo);
                                              
         
             
-                Equipo equipo=EquipoController.getEquipo(equipoIndex);
+                Equipo equipo=EquipoController.getInstance().getEquipo(equipoIndex);
                 if(equipo.getArqueros()!=null){
                   for(Arquero arquero:equipo.getArqueros())   {
                    registros[0] = arquero.getRut();
@@ -325,7 +362,7 @@ public class JugadoresController {
         jTableClientes.setModel(modelo);
     }
     
-    public static void agregarJugador(Object object,String tipo,int equipoIndex){
+    public  void agregarJugador(Object object,String tipo,int equipoIndex){
     
         switch(tipo){
 
@@ -346,7 +383,7 @@ public class JugadoresController {
             break;
         }    
     }
-    public static ArrayList<Jugador> getJugadores(){        
+    public  ArrayList<Jugador> getJugadores(){        
        return objJugador;
     }
     

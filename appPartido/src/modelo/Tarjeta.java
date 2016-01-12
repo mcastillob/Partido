@@ -3,7 +3,7 @@ package modelo;
 // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
 // #[regen=yes,id=DCE.BE0F82ED-85F2-DAF9-5E53-35AB9B6689E5]
 // </editor-fold> 
-public class Tarjeta {
+public class Tarjeta  implements java.io.Serializable{
 
     // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
     // #[regen=yes,id=DCE.7DED5B2E-ABB4-39E9-BBB0-9F464000654C]
