@@ -30,7 +30,7 @@ public  class SerializadorUtil<T> {
         public  T readObj() {
     	T obj = null;
         try  {
-        	//verifica si exixte el archivo fisico para realizar la lectura de los datos   
+        	//verifica si existe el archivo fisico para realizar la lectura de los datos   
         	if(file.exists()){ 
                 //carga el archivo en memoria                  
         	ObjectInputStream st      = new ObjectInputStream(new FileInputStream(file));
