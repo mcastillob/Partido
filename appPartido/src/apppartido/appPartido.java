@@ -659,73 +659,74 @@ public class appPartido extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-         if(RutUtil.validaRut(jTextFieldrutJugador.getText())){  
-        
-            
-         String tipo =jComboBoxTipo.getSelectedItem().toString();
-        switch(tipo){
-    
-        case "Arquero":
-            
-          Arquero arquero=new Arquero();
-          arquero.setRut(jTextFieldrutJugador.getText());
-          arquero.setNombres(jTextFieldNombres.getText());
-          arquero.setApellidoPaterno(jTextFieldApellidoPat.getText());
-          arquero.setApellidoMaterno(jTextFieldApellidoMat.getText());
-          arquero.setNumero(Integer.parseInt(jTextFieldrutNumero.getText()));    
-          arquero.setTitular(jCheckBoxTitular.isSelected());
-          JugadoresController.getInstance().agregarArquero(arquero, jComboBoxEquipo.getSelectedIndex());
-          JugadoresController.getInstance().doTableJugadores(jTableJugadores);
-    
-        break;
-        
-        case "Defensa":
-            
-          Defensa defensa=new Defensa();
-          defensa.setRut(jTextFieldrutJugador.getText());
-          defensa.setNombres(jTextFieldNombres.getText());
-          defensa.setApellidoPaterno(jTextFieldApellidoPat.getText());
-          defensa.setApellidoMaterno(jTextFieldApellidoMat.getText());
-          defensa.setNumero(Integer.parseInt(jTextFieldrutNumero.getText()));    
-          defensa.setTitular(jCheckBoxTitular.isSelected());
-          JugadoresController.getInstance().agregarDefensa(defensa, jComboBoxEquipo.getSelectedIndex());
-          JugadoresController.getInstance().doTableJugadores(jTableJugadores);   
-            
-        break;
-        
-        case "Volante":
-          Volante volante=new Volante();
-          volante.setRut(jTextFieldrutJugador.getText());
-          volante.setNombres(jTextFieldNombres.getText());
-          volante.setApellidoPaterno(jTextFieldApellidoPat.getText());
-          volante.setApellidoMaterno(jTextFieldApellidoMat.getText());
-          volante.setNumero(Integer.parseInt(jTextFieldrutNumero.getText()));    
-          volante.setTitular(jCheckBoxTitular.isSelected());
-          JugadoresController.getInstance().agregarVolante(volante, jComboBoxEquipo.getSelectedIndex());
-          JugadoresController.getInstance().doTableJugadores(jTableJugadores);     
-            
-        break;
-    
-         case "Delantero":
-            
-          Delantero delantero=new Delantero();
-          delantero.setRut(jTextFieldrutJugador.getText());
-          delantero.setNombres(jTextFieldNombres.getText());
-          delantero.setApellidoPaterno(jTextFieldApellidoPat.getText());
-          delantero.setApellidoMaterno(jTextFieldApellidoMat.getText());
-          delantero.setNumero(Integer.parseInt(jTextFieldrutNumero.getText()));    
-          delantero.setTitular(jCheckBoxTitular.isSelected());
-          JugadoresController.getInstance().agregarDelantero(delantero, jComboBoxEquipo.getSelectedIndex());
-          JugadoresController.getInstance().doTableJugadores(jTableJugadores);   
+         if(RutUtil.validaRut(jTextFieldrutJugador.getText())){ 
              
-        break;
-    }
-          
+
+
+                String tipo =jComboBoxTipo.getSelectedItem().toString();
+               switch(tipo){
+
+               case "Arquero":
+
+                 Arquero arquero=new Arquero();
+                 arquero.setRut(jTextFieldrutJugador.getText());
+                 arquero.setNombres(jTextFieldNombres.getText());
+                 arquero.setApellidoPaterno(jTextFieldApellidoPat.getText());
+                 arquero.setApellidoMaterno(jTextFieldApellidoMat.getText());
+                 arquero.setNumero(Integer.parseInt(jTextFieldrutNumero.getText()));    
+                 arquero.setTitular(jCheckBoxTitular.isSelected());
+                 JugadoresController.getInstance().agregarArquero(arquero, jComboBoxEquipo.getSelectedIndex());
+                 JugadoresController.getInstance().doTableJugadores(jTableJugadores);
+
+               break;
+
+               case "Defensa":
+
+                 Defensa defensa=new Defensa();
+                 defensa.setRut(jTextFieldrutJugador.getText());
+                 defensa.setNombres(jTextFieldNombres.getText());
+                 defensa.setApellidoPaterno(jTextFieldApellidoPat.getText());
+                 defensa.setApellidoMaterno(jTextFieldApellidoMat.getText());
+                 defensa.setNumero(Integer.parseInt(jTextFieldrutNumero.getText()));    
+                 defensa.setTitular(jCheckBoxTitular.isSelected());
+                 JugadoresController.getInstance().agregarDefensa(defensa, jComboBoxEquipo.getSelectedIndex());
+                 JugadoresController.getInstance().doTableJugadores(jTableJugadores);   
+
+               break;
+
+               case "Volante":
+                 Volante volante=new Volante();
+                 volante.setRut(jTextFieldrutJugador.getText());
+                 volante.setNombres(jTextFieldNombres.getText());
+                 volante.setApellidoPaterno(jTextFieldApellidoPat.getText());
+                 volante.setApellidoMaterno(jTextFieldApellidoMat.getText());
+                 volante.setNumero(Integer.parseInt(jTextFieldrutNumero.getText()));    
+                 volante.setTitular(jCheckBoxTitular.isSelected());
+                 JugadoresController.getInstance().agregarVolante(volante, jComboBoxEquipo.getSelectedIndex());
+                 JugadoresController.getInstance().doTableJugadores(jTableJugadores);     
+
+               break;
+
+                case "Delantero":
+
+                 Delantero delantero=new Delantero();
+                 delantero.setRut(jTextFieldrutJugador.getText());
+                 delantero.setNombres(jTextFieldNombres.getText());
+                 delantero.setApellidoPaterno(jTextFieldApellidoPat.getText());
+                 delantero.setApellidoMaterno(jTextFieldApellidoMat.getText());
+                 delantero.setNumero(Integer.parseInt(jTextFieldrutNumero.getText()));    
+                 delantero.setTitular(jCheckBoxTitular.isSelected());
+                 JugadoresController.getInstance().agregarDelantero(delantero, jComboBoxEquipo.getSelectedIndex());
+                 JugadoresController.getInstance().doTableJugadores(jTableJugadores);   
+
+               break;
+               }
+
 
 
           }else{
           
-             mensajeUtil.setWarningMsg("El Rut Ingresado es invalido.");
+                  mensajeUtil.setWarningMsg("El Rut Ingresado es invalido.");
           }
 
         // TODO add your handling code here:
