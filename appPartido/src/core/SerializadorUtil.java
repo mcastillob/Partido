@@ -10,7 +10,7 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import modelo.DirectorTecnico;
+
 
 /**
  *
@@ -22,6 +22,7 @@ public  class SerializadorUtil<T> {
         private File file;    
 
         SerializadorUtil(Class tipo) {
+            //define un archivo DAT segun el nombre de la clase que pasa por referencia
             file=new File(tipo.getName()+".dat");
         }
 
@@ -29,9 +30,11 @@ public  class SerializadorUtil<T> {
         public  T readObj() {
     	T obj = null;
         try  {
-        	        
-        	if(file.exists()){        	
+        	//verifica si exixte el archivo fisico para realizar la lectura de los datos   
+        	if(file.exists()){ 
+                //carga el archivo en memoria                  
         	ObjectInputStream st      = new ObjectInputStream(new FileInputStream(file));
+                //rrecupera el objeto de la memoria
                 obj=(T)st.readObject();
           
             st.close();            
@@ -48,6 +51,7 @@ public  class SerializadorUtil<T> {
         public void writeObj(Serializable obj) {
 
         try  {
+            
             ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(file));
             os.writeObject(obj);
             os.flush();

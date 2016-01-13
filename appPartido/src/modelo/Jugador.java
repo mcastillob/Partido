@@ -1,94 +1,58 @@
 package modelo;
 import java.util.ArrayList; 
 
-// <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
-// #[regen=yes,id=DCE.3793631C-D346-6C18-9478-2B033D51DEAA]
-// </editor-fold> 
+
 public class Jugador  implements java.io.Serializable{
 static final long serialVersionUID = 42L;
-    // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
-    // #[regen=yes,id=DCE.088C524C-5A1F-8CAA-D6B9-9FD9A64C3B90]
-    // </editor-fold> 
+    
     private String Rut;
 
-    // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
-    // #[regen=yes,id=DCE.D72E3ACD-E66C-62E2-4DD3-4E61D567A73D]
-    // </editor-fold> 
+    
     private int tiroLibres;
 
-    // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
-    // #[regen=yes,id=DCE.140C11E6-6E03-71B4-F08C-5AE5BC0C1009]
-    // </editor-fold> 
+    
     private int penales;
 
-    // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
-    // #[regen=yes,id=DCE.F1158AC4-0177-1F35-5DD7-5C6DB5222922]
-    // </editor-fold> 
+    
     private int penalesConvertidos;
 
-    // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
-    // #[regen=yes,id=DCE.4B5F6C03-DFAC-504D-1EDE-91FA3A33FD61]
-    // </editor-fold> 
+    
     private int penalesAtajados;
 
-    // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
-    // #[regen=yes,id=DCE.FF77F01C-A337-7176-1BDC-59878B2F8D3B]
-    // </editor-fold> 
+    
     private int numero;
 
-    // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
-    // #[regen=yes,id=DCE.16199354-1B0B-EFF8-C3B5-03C6690EC0CF]
-    // </editor-fold> 
+    
     private boolean titular;
 
-    // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
-    // #[regen=yes,id=DCE.AE2DC881-8E25-EDE7-C57C-3898962CD4CD]
-    // </editor-fold> 
+    
     private int asistencias;
 
-    // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
-    // #[regen=yes,id=DCE.98420487-EF0B-3698-1321-54F1894F4A86]
-    // </editor-fold> 
+    
     private int goles;
 
-    // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
-    // #[regen=yes,id=DCE.F644903A-1138-FD21-0D7F-0AFDA060AE73]
-    // </editor-fold> 
+   
     private Equipo Equipo;
 
-    // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
-    // #[regen=yes,id=DCE.723A7DB7-74EF-821B-8F3E-8829269057DC]
-    // </editor-fold> 
+    
     private Cambio mCambios;
 
-    // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
-    // #[regen=yes,id=DCE.CB8B2FCF-9C0D-693C-81C0-64BEA7D59AC7]
-    // </editor-fold> 
+    
     private ArrayList<Tarjeta> Tarjetas;
 
-    // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
-    // #[regen=yes,id=DCE.0710659D-AFEB-BF72-BB1C-05B68BFA285F]
-    // </editor-fold> 
+    
     private String ApellidoPaterno;
 
-    // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
-    // #[regen=yes,id=DCE.7B93B398-F7C8-66B9-0295-16008D71C990]
-    // </editor-fold> 
+    
     private String ApellidoMaterno;
 
-    // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
-    // #[regen=yes,id=DCE.1B5B9156-1F06-5A65-18CA-230E90EE2981]
-    // </editor-fold> 
+    
     private int edad;
 
-    // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
-    // #[regen=yes,id=DCE.54DD5F81-8218-FB05-AC8A-2636659F4074]
-    // </editor-fold> 
+    
     private String Nombres;
 
-    // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
-    // #[regen=yes,id=DCE.33EA740B-080D-DB59-0F2C-6F586078151B]
-    // </editor-fold> 
+    
     public Jugador () {
     }
     public String getNombreCompleto(){

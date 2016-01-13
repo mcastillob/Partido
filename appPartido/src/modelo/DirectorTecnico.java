@@ -1,39 +1,25 @@
 package modelo;
 import java.util.ArrayList; 
 
-// <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
-// #[regen=yes,id=DCE.C0B48359-645B-2508-3019-5936F3DD0293]
-// </editor-fold> 
+
 public class DirectorTecnico  implements  java.io.Serializable{
 static final long serialVersionUID = 42L;
-    // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
-    // #[regen=yes,id=DCE.0C1709A9-53CE-2105-3951-11751B4E3598]
-    // </editor-fold> 
+    
     private String rut;
 
-    // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
-    // #[regen=yes,id=DCE.DFBE4C35-A92A-5B38-516F-9C568311B7F8]
-    // </editor-fold> 
+    
     private String nombre;
 
-    // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
-    // #[regen=yes,id=DCE.F77AE79D-C63E-27C4-D28F-61075755E8CD]
-    // </editor-fold> 
+    
     private String apellidoPat;
 
-    // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
-    // #[regen=yes,id=DCE.1628F15B-FCE0-C4F4-BB77-19AA32F3876E]
-    // </editor-fold> 
+   
     private String apellidoMat;
 
-    // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
-    // #[regen=yes,id=DCE.64D66025-9AAE-E99E-B463-FF771F65D132]
-    // </editor-fold> 
+    
     private ArrayList<Campeonato> Titulos;
 
-    // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
-    // #[regen=yes,id=DCE.0E1A0FCC-3CAA-BE2F-509E-398F02B5A10B]
-    // </editor-fold> 
+    
     public DirectorTecnico () {
     }
 

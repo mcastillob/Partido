@@ -753,28 +753,42 @@ public class appPartido extends javax.swing.JFrame {
     }//GEN-LAST:event_jCheckBoxTitularActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:        
+       
+        
+        // crea el objeto equipo y carga las variables
         Equipo objEquipo=new Equipo();
         objEquipo.setNombre(jTextFieldNombreEquipo.getText());
+        
+        //agreag director tecnico seleccionado al equipo
         objEquipo.setDirectorTecnico(DirectorTecnicoController.getInstance().getDirectorTecnico(jComboBoxDirectorTecnico.getSelectedIndex()));
+        
+        //agrega el equipo al controlador y luego lo guarda serializado 
         EquipoController.getInstance().agregaEquipo(objEquipo);
-        jListEquipos.setModel(EquipoController.getInstance().getLlistModel());
+        
+        //recarga todo los elementos que despliegan datos por pantalla
         cargaInicial();
+        
+        //mensaje de información
         mensajeUtil.setMsg("Equipo Agregado Correctamente");
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
     if(RutUtil.validaRut(jTextFieldRutDt.getText())){
     
-     DirectorTecnico objDT=new DirectorTecnico();
-     objDT.setRut(jTextFieldRutDt.getText());
-     objDT.setNombre(jTextFieldNombreDt.getText());
-     objDT.setApellidoPat(jTextFieldApellidoDt.getText());
-     objDT.setApellidoMat(jTextFieldApellidoMatDt.getText());
-     DirectorTecnicoController.getInstance().agregarDT(objDT);
-     jListDt.setModel(DirectorTecnicoController.getInstance().getLlistModel());
-     jComboBoxDirectorTecnico.setModel(DirectorTecnicoController.getInstance().getComboBoxModel());
-     jComboBoxEquipo.setModel(EquipoController.getInstance().getComboBoxModel());
+        // crea el objeto DT con sus datos correspondientes       
+        DirectorTecnico objDT = new DirectorTecnico();
+        objDT.setRut(jTextFieldRutDt.getText());
+        objDT.setNombre(jTextFieldNombreDt.getText());
+        objDT.setApellidoPat(jTextFieldApellidoDt.getText());
+        objDT.setApellidoMat(jTextFieldApellidoMatDt.getText());
+       
+        //serializa el objeto DT y lo guarda en un archivo tipo
+        DirectorTecnicoController.getInstance().agregarDT(objDT);
+        //jListDt.setModel(DirectorTecnicoController.getInstance().getLlistModel());
+        //jComboBoxDirectorTecnico.setModel(DirectorTecnicoController.getInstance().getComboBoxModel());       
+        //jListEquipos.setModel(EquipoController.getInstance().getLlistModel());
+        
+        cargaInicial();
      mensajeUtil.setMsg("DT Agregado Correctamente");
     }else{
         mensajeUtil.setWarningMsg("El Rut Ingresado es invalido.");
@@ -792,7 +806,7 @@ public class appPartido extends javax.swing.JFrame {
     jComboBoxEquipoVs1.setModel(EquipoController.getInstance().getComboBoxModel());
     jComboBoxEquipoVs2.setModel(EquipoController.getInstance().getComboBoxModel());
     jListEquipos.setModel(EquipoController.getInstance().getLlistModel());
-    jComboBoxEquipo.setModel(EquipoController.getInstance().getComboBoxModel());
+    jComboBoxEquipo.setModel(EquipoController.getInstance().getComboBoxModel());    
     JugadoresController.getInstance().doTableJugadores(jTableJugadores);
      jListJugadorPartido2.setModel(JugadoresController.getInstance().getListTitularesModel(0));
      jListJugadorPartido1.setModel(JugadoresController.getInstance().getListTitularesModel(0));

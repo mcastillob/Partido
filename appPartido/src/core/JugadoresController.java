@@ -42,112 +42,11 @@ public class JugadoresController  implements java.io.Serializable{
      }
     
     
-    
-    
-//    public static Equipo colocolo=lEquipo.get(0);
-//    public static Equipo uchile=lEquipo.get(1);
-//    public static Equipo wanderers=lEquipo.get(2);
-//    public static Equipo cobreloa=lEquipo.get(3);
-    
-//    public static void JugadoresInicial(){       
-//                
-//        //LOAD Jugadores in Colo-Colo
-//        Jugador jg1=new Jugador();
-//        jg1.setRut("8995413-4");
-//        jg1.setNombres("Francisco");
-//        jg1.setApellidoPaterno("Valdes");
-//        jg1.setApellidoMaterno("Perez");
-//        jg1.setNumero(10);
-//        jg1.setEquipo(colocolo);
-//        jg1.setTitular(false);
-//        
-//        Jugador jg2=new Jugador();
-//        jg2.setRut("21896929-1");
-//        jg2.setNombres("Carlos");
-//        jg2.setApellidoPaterno("Caszely");
-//        jg2.setApellidoMaterno("Garrido");
-//        jg2.setNumero(35);
-//        jg2.setEquipo(colocolo);
-//        jg2.setTitular(true);
-//        
-//        objJugador.add(jg1);
-//        objJugador.add(jg2);
-//                
-//        //LOAD Jugadores in U Chile
-//        Jugador jg3=new Jugador();
-//        jg3.setRut("22599054-9");
-//        jg3.setNombres("Manuel");
-//        jg3.setApellidoPaterno("Rodríguez");
-//        jg3.setApellidoMaterno("Vega");
-//        jg3.setNumero(1);
-//        jg3.setEquipo(uchile);
-//        jg3.setTitular(false);
-//        
-//        Jugador jg4=new Jugador();
-//        jg4.setRut("15516797-1");
-//        jg4.setNombres("Marcelo");
-//        jg4.setApellidoPaterno("Salas");
-//        jg4.setApellidoMaterno("Melinao");
-//        jg2.setNumero(9);
-//        jg4.setEquipo(uchile);
-//        jg4.setTitular(true);
-//        
-//        objJugador.add(jg3);
-//        objJugador.add(jg4);
-//        
-//        
-//        
-//        //LOAD Jugadores in S. Wanderers
-//        Jugador jg5=new Jugador();
-//        jg5.setRut("5268495-1");
-//        jg5.setNombres("Mauricio");
-//        jg5.setApellidoPaterno("Rojas");
-//        jg5.setApellidoMaterno("Toro");
-//        jg5.setNumero(20);
-//        jg5.setEquipo(wanderers);
-//        jg5.setTitular(false);
-//        
-//        Jugador jg6=new Jugador();
-//        jg6.setRut("24432325-1");
-//        jg6.setNombres("Claudio");
-//        jg6.setApellidoPaterno("Borghi");
-//        jg6.setApellidoMaterno("Bidos");
-//        jg6.setNumero(15);
-//        jg6.setEquipo(wanderers);
-//        jg6.setTitular(true);
-//        
-//        objJugador.add(jg5);
-//        objJugador.add(jg6);
-//        
-//        //LOAD Jugadores in Cobreloa
-//         Jugador jg7=new Jugador();
-//        jg7.setRut("8801551-7");
-//        jg7.setNombres("Eduardo");
-//        jg7.setApellidoPaterno("Vargas");
-//        jg7.setApellidoMaterno("Rojas");
-//        jg7.setNumero(4);
-//        jg7.setEquipo(wanderers);
-//        jg7.setTitular(false);
-//        
-//        Jugador jg8=new Jugador();
-//        jg8.setRut("8801551-7");
-//        jg8.setNombres("Alexis");
-//        jg8.setApellidoPaterno("Sánchez");
-//        jg8.setApellidoMaterno("Sánchez");
-//        jg8.setNumero(7);
-//        jg8.setEquipo(wanderers);
-//        jg8.setTitular(true);
-//                
-//        objJugador.add(jg7);
-//        objJugador.add(jg8);
-//        
-//        
-//        
-//         
-//        
-//    } 
+
    
    public  void agregarArquero(Arquero arquero,int equipoIndex){
+       
+       //agrega arquero al equipo indicado
        Equipo equipo=EquipoController.getInstance().getEquipo(equipoIndex);    
        if(equipo.getArqueros()==null){
             ArrayList<Arquero> arq=new ArrayList<Arquero>();
@@ -166,7 +65,7 @@ public class JugadoresController  implements java.io.Serializable{
    }   
    
    public  void agregarDefensa(Defensa defensa,int equipoIndex){
-   
+   //agrega defensa al equipo indicado
     Equipo equipo=EquipoController.getInstance().getEquipo(equipoIndex);
     
     if(equipo.getDefensas()==null){
@@ -188,7 +87,7 @@ public class JugadoresController  implements java.io.Serializable{
    
    
       public  void agregarDelantero(Delantero delantero,int equipoIndex){
-   
+   //agrega un delantero al equipo indicado
     Equipo equipo=EquipoController.getInstance().getEquipo(equipoIndex);
     
     if(equipo.getDelanteros()==null){
@@ -209,7 +108,7 @@ public class JugadoresController  implements java.io.Serializable{
    
    
     public  void agregarVolante(Volante volante,int equipoIndex){
-   
+   //agrega un volante al equipo indicado
     Equipo equipo=EquipoController.getInstance().getEquipo(equipoIndex);
     
     if(equipo.getVolantes()==null){
@@ -234,9 +133,11 @@ public class JugadoresController  implements java.io.Serializable{
         }
     }
    
-   public  void doTableJugadores(javax.swing.JTable jTableClientes) {
+   public  void doTableJugadores(javax.swing.JTable jTableJugadores) {
+       
+       //carga jugadores  en modelo para Jtable 
         String registros[]       = new String[6];
-        DefaultTableModel modelo = (DefaultTableModel) jTableClientes.getModel();
+        DefaultTableModel modelo = (DefaultTableModel) jTableJugadores.getModel();
         removeRowsTable(modelo);
                                              
             for(Equipo equipo:EquipoController.getInstance().lEquipo)   {
@@ -298,10 +199,12 @@ public class JugadoresController  implements java.io.Serializable{
                    
                    
     
-        jTableClientes.setModel(modelo);
+        jTableJugadores.setModel(modelo);
     }
    
  public  void doTableJugadores(javax.swing.JTable jTableClientes,int equipoIndex) {
+     
+     //carga modelo con datos de jugadores para crear Jtable con los datos
         String registros[]       = new String[6];
         DefaultTableModel modelo = (DefaultTableModel) jTableClientes.getModel();
         removeRowsTable(modelo);
@@ -394,7 +297,7 @@ public class JugadoresController  implements java.io.Serializable{
     
     public void EliminaJugador(String rut){
           
-        
+        //elimina el jugador 
         for (Equipo erquipo : emptyIfNull(EquipoController.getInstance().lEquipo)) {    
             
             
@@ -439,6 +342,8 @@ public class JugadoresController  implements java.io.Serializable{
     
         public  DefaultListModel  getListTitularesModel(int equipoIndex){
           
+            
+            //busca todos los jugadores titulares del equipo indicado
                 DefaultListModel model = new DefaultListModel();
         
             

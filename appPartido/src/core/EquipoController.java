@@ -35,41 +35,17 @@ public class EquipoController  implements  java.io.Serializable{
    }
     
      
-    public  void grabar(){        
+    public  void grabar(){  
+        //serializa y graba el objeto
       SerializadorUtil<EquipoController> Seri=new SerializadorUtil<EquipoController>(EquipoController.class);
       Seri.writeObj(this.intance);    
      }
     
    
-   
-//   public static void equipoInicial(){
-//   
-//       Equipo equipo1=new Equipo();
-//       equipo1.setNombre("Colo Colo");
-//       equipo1.setDirectorTecnico(DirectorTecnicoController.intance.getDirectorTecnico(0));
-//       
-//       Equipo equipo2=new Equipo();
-//       equipo2.setNombre("Universidad de chile");
-//       equipo2.setDirectorTecnico(DirectorTecnicoController.intance.getDirectorTecnico(1));
-//       
-//       
-//       Equipo equipo3=new Equipo();
-//       equipo3.setNombre("Santiago Wanderers");
-//       equipo3.setDirectorTecnico(DirectorTecnicoController.intance.getDirectorTecnico(2));
-//       
-//       Equipo equipo4=new Equipo();
-//       equipo4.setNombre("Cobreloa");
-//       equipo4.setDirectorTecnico(DirectorTecnicoController.intance.getDirectorTecnico(3));
-//       
-//       
-//        lEquipo.add(equipo1);
-//        lEquipo.add(equipo2);
-//        lEquipo.add(equipo3);
-//        lEquipo.add(equipo4);
-//   }
+
    
    public  void agregaEquipo(Equipo equipo){
-   
+       //valida si el equipo existe. en tal caso lo quita y lo agrega nuevamente para evitar duplicados
          List<Equipo> dtFilter= lEquipo.stream().filter(x->x.getNombre().equals(equipo.getNombre())).collect(Collectors.toList());
         if(dtFilter.size()>0){
             lEquipo.remove(dtFilter.get(0));
@@ -79,7 +55,7 @@ public class EquipoController  implements  java.io.Serializable{
    }
     
     public   Equipo getEquipo(String nombre){
-   
+       // busca el equipo segun nombre y luego retorno el objeto equipo
          List<Equipo> dtFilter= lEquipo.stream().filter(x->x.getNombre().equals(nombre)).collect(Collectors.toList());
         if(dtFilter.size()>0){
          return dtFilter.get(0);
@@ -88,6 +64,7 @@ public class EquipoController  implements  java.io.Serializable{
    }
     
       public  void  eliminaEquipo(String nombre){
+          //busca el objeto equipo y lo elimina
        List<Equipo> dtFilter= lEquipo.stream().filter(x->x.getNombre().equals(nombre)).collect(Collectors.toList());
        if(dtFilter.size()>0){
          lEquipo.remove(dtFilter.get(0));
@@ -98,7 +75,7 @@ public class EquipoController  implements  java.io.Serializable{
     
     
       public  Equipo getEquipo(int index){
-          
+          //recupera el equipo segun posicion de la lista
           if(lEquipo.size()>index){
           return lEquipo.get(index);
           }
@@ -107,6 +84,8 @@ public class EquipoController  implements  java.io.Serializable{
    }
     
     public  DefaultListModel  getLlistModel(){
+        
+        //llena datos de en model para Jlist
          DefaultListModel model = new DefaultListModel();
        
          for (Equipo equipo : lEquipo) {
@@ -117,7 +96,7 @@ public class EquipoController  implements  java.io.Serializable{
     }
     
       public  DefaultComboBoxModel getComboBoxModel(){
-     
+     //llena datos de modelo para JCombobox
        DefaultComboBoxModel model = new DefaultComboBoxModel();
           for (Equipo equipo : lEquipo) {
               model.addElement(equipo.getNombre());
