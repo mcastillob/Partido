@@ -45,7 +45,9 @@ public class JugadoresController  implements java.io.Serializable{
 
    
    public  void agregarArquero(Arquero arquero,int equipoIndex){
-       
+          if(arquero!=null){
+             EliminaJugador(arquero.getRut());   
+            } 
        //agrega arquero al equipo indicado
        Equipo equipo=EquipoController.getInstance().getEquipo(equipoIndex);    
        if(equipo.getArqueros()==null){
@@ -65,6 +67,10 @@ public class JugadoresController  implements java.io.Serializable{
    }   
    
    public  void agregarDefensa(Defensa defensa,int equipoIndex){
+       
+          if(defensa!=null){
+             EliminaJugador(defensa.getRut());   
+            } 
    //agrega defensa al equipo indicado
     Equipo equipo=EquipoController.getInstance().getEquipo(equipoIndex);
     
@@ -87,6 +93,10 @@ public class JugadoresController  implements java.io.Serializable{
    
    
       public  void agregarDelantero(Delantero delantero,int equipoIndex){
+          
+     if(delantero!=null){
+             EliminaJugador(delantero.getRut());   
+            }       
    //agrega un delantero al equipo indicado
     Equipo equipo=EquipoController.getInstance().getEquipo(equipoIndex);
     
@@ -108,6 +118,11 @@ public class JugadoresController  implements java.io.Serializable{
    
    
     public  void agregarVolante(Volante volante,int equipoIndex){
+        
+             
+            if(volante!=null){
+             EliminaJugador(volante.getRut());   
+            }
    //agrega un volante al equipo indicado
     Equipo equipo=EquipoController.getInstance().getEquipo(equipoIndex);
     
@@ -268,7 +283,12 @@ public class JugadoresController  implements java.io.Serializable{
     }
     
     public  void agregarJugador(Object object,String tipo,int equipoIndex){
-    
+        
+            Jugador jugador=(Jugador)object; 
+            if(jugador!=null){
+             EliminaJugador(jugador.getRut());   
+            }
+                      
         switch(tipo){
 
             case "Arquero":
@@ -391,23 +411,52 @@ public class JugadoresController  implements java.io.Serializable{
     public  ArrayList<Jugador> getJugadores(){        
        return objJugador;
     }
-    
-    /*
-    public static DefaultTableModel getTableModel(){
-        DefaultTableModel t= new DefaultTableModel();
-            for (Jugador j : objJugador) {
-                         
-            }
-        return t;
-    } 
-    
-    */
 
-//    public static List<Arquero> arqueros =new ArrayList<Arquero>();
-//    public static List<Defensa> defensas =new ArrayList<Defensa>();
-//    public static List<Delantero> delanteros =new ArrayList<Delantero>();
-//    
-//    
+    
+    
+    
+     public Jugador getJugador(String rut){
+          
+        //elimina el jugador 
+        for (Equipo erquipo : emptyIfNull(EquipoController.getInstance().lEquipo)) {    
+            
+            
+            
+            for (Jugador jugador :  emptyIfNull(erquipo.getDefensas())) {
+                
+                if(jugador.getRut().equals(rut)){
+                
+                return jugador;
+               
+                }
+               
+            }
+            for (Jugador jugador :  emptyIfNull(erquipo.getArqueros())) {
+                 if(jugador.getRut().equals(rut)){
+                
+                return jugador;
+                }
+            }     
+             
+            for (Jugador jugador :  emptyIfNull(erquipo.getDelanteros())) {
+                 if(jugador.getRut().equals(rut)){
+                
+                return jugador;
+                }
+            }  
+            
+             for (Jugador jugador :  emptyIfNull(erquipo.getVolantes())) {
+                 if(jugador.getRut().equals(rut)){
+                
+                return jugador;
+                }
+            } 
+          
+        }
+     
+    return null;
+    }
+    
     
     
 }

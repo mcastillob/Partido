@@ -103,6 +103,8 @@ public class appPartido extends javax.swing.JFrame {
         jComboBoxPartidoJugado = new javax.swing.JComboBox<>();
         jLabel19 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -125,7 +127,7 @@ public class appPartido extends javax.swing.JFrame {
 
         jLabel9.setText("Director Técnico");
 
-        jButton2.setText("Agregar");
+        jButton2.setText("Grabar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -212,7 +214,7 @@ public class appPartido extends javax.swing.JFrame {
 
         jLabel1.setText("Rut");
 
-        jButton1.setText("Agregar");
+        jButton1.setText("Grabar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -281,6 +283,11 @@ public class appPartido extends javax.swing.JFrame {
             }
         )
     );
+    jTableJugadores.addMouseListener(new java.awt.event.MouseAdapter() {
+        public void mouseClicked(java.awt.event.MouseEvent evt) {
+            jTableJugadoresMouseClicked(evt);
+        }
+    });
     jScrollPane2.setViewportView(jTableJugadores);
 
     jButton5.setText("Quitar");
@@ -408,7 +415,7 @@ public class appPartido extends javax.swing.JFrame {
 
     jLabel12.setText("Apellido Mat.");
 
-    jButton4.setText("Agregar");
+    jButton4.setText("Grabar");
     jButton4.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
             jButton4ActionPerformed(evt);
@@ -553,6 +560,10 @@ public class appPartido extends javax.swing.JFrame {
         }
     });
 
+    jLabel20.setText("Titulares");
+
+    jLabel21.setText("Titulares");
+
     javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
     jPanel3.setLayout(jPanel3Layout);
     jPanel3Layout.setHorizontalGroup(
@@ -584,23 +595,30 @@ public class appPartido extends javax.swing.JFrame {
                                             .addComponent(jButton3)))
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                             .addComponent(jComboBoxEquipoVs1, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
                             .addComponent(jLabel14)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jComboBoxEquipoVs2, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jComboBoxEquipoVs2, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGroup(jPanel3Layout.createSequentialGroup()
                     .addGap(333, 333, 333)
                     .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
             .addContainerGap())
-        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+        .addGroup(jPanel3Layout.createSequentialGroup()
             .addContainerGap()
-            .addComponent(jLabel19)
-            .addGap(18, 18, Short.MAX_VALUE)
-            .addComponent(jComboBoxPartidoJugado, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(25, 25, 25))
+            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addComponent(jLabel19)
+                    .addGap(18, 18, Short.MAX_VALUE)
+                    .addComponent(jComboBoxPartidoJugado, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(25, 25, 25))))
     );
     jPanel3Layout.setVerticalGroup(
         jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -618,7 +636,11 @@ public class appPartido extends javax.swing.JFrame {
                 .addComponent(jLabel14)
                 .addComponent(jLabel15)
                 .addComponent(jLabel16))
-            .addGap(26, 26, 26)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(jLabel20)
+                .addComponent(jLabel21))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel3Layout.createSequentialGroup()
@@ -928,6 +950,21 @@ public class appPartido extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void jTableJugadoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableJugadoresMouseClicked
+
+     String rut= jTableJugadores.getModel().getValueAt(jTableJugadores.getSelectedRow(), 0).toString();
+     Jugador objJugador= JugadoresController.getInstance().getJugador(rut);
+     
+     if(objJugador!=null){
+     jTextFieldrutJugador.setText(objJugador.getRut());
+     jTextFieldNombres.setText(objJugador.getNombres());
+     jTextFieldApellidoPat.setText(objJugador.getApellidoPaterno());
+     jTextFieldApellidoMat.setText(objJugador.getApellidoMaterno());
+     jTextFieldrutNumero.setText(String.valueOf(objJugador.getNumero()));
+     }
+     
+    }//GEN-LAST:event_jTableJugadoresMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -989,6 +1026,8 @@ public class appPartido extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
