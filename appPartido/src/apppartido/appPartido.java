@@ -547,6 +547,11 @@ public class appPartido extends javax.swing.JFrame {
     jLabel19.setText("Partidos Jugados");
 
     jButton3.setText("Jugar");
+    jButton3.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jButton3ActionPerformed(evt);
+        }
+    });
 
     javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
     jPanel3.setLayout(jPanel3Layout);
@@ -656,8 +661,6 @@ public class appPartido extends javax.swing.JFrame {
 
          if(RutUtil.validaRut(jTextFieldrutJugador.getText())){  
         
-         
-         
             
          String tipo =jComboBoxTipo.getSelectedItem().toString();
         switch(tipo){
@@ -918,6 +921,11 @@ public class appPartido extends javax.swing.JFrame {
     int index=jComboBoxEquipoVs2.getSelectedIndex();
     jListJugadorPartido2.setModel(JugadoresController.getInstance().getListTitularesModel(index));
     }//GEN-LAST:event_jComboBoxEquipoVs2ItemStateChanged
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
